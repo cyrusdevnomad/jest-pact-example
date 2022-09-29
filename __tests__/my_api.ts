@@ -36,8 +36,8 @@ pactWith({ consumer: 'MyConsumer', provider: 'MyProvider' }, provider => {
             })
         );
 
-        it('Testing the GET call', () => {
-            client.getHealth().then((health: any) => {
+        it('Testing the GET call', async () => {
+            await client.getHealth().then((health: any) => {
                 expect(health).toEqual('up');
                 console.log(`health: response: ${health}`);
             });
